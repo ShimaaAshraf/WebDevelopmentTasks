@@ -1,0 +1,57 @@
+/* --- Font Imports --- */
+/* Import the "Anton" font from Google Fonts to make it available for use. */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+/* A little custom style to center everything */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+/* --- Element Styling --- */
+
+/* Style the main heading of the page */
+h1 {
+    font-family: "Anton", sans-serif;
+    font-weight: 400; /* Standard weight for this font */
+    font-style: normal;
+    font-size: 5rem; /* Use rem for responsive font sizing */
+    color: #343a40; /* A dark gray for better contrast */
+}
+
+/* Custom styling for the primary button */
+.btn-primary {
+    /* Override specific Bootstrap variables for a custom look */
+    --bs-btn-bg: #198754; /* A nice green */
+    --bs-btn-border-color: #198754;
+    --bs-btn-hover-bg: #157347; /* A darker green for hover */
+    --bs-btn-hover-border-color: #146c43;
+    
+    /* Add custom padding and a transition for a smoother effect */
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px); /* Add a subtle lift on hover */
+}
+
+/* --- Quote Box Styling --- */
+
+/* Style the container for the quote */
+#quoteContainer {
+    /* A subtle, professional gradient background */
+    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+    border-left: 5px solid #198754; /* Use the button's green for a consistent theme */
+    border-radius: 0.5rem; /* Slightly rounded corners */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition for the shadow */
+    min-height: 150px; /* Prevents layout shift when quote length changes */
+}
+
+/* Enhance the shadow on hover for a bit of interactivity */
+#quoteContainer:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important; /* Override Bootstrap's shadow */
+}
