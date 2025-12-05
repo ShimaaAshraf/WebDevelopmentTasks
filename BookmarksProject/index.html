@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookmark</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="w-80 backg interface position-relative py-5">
+       
+        <div class="parent d-flex flex-column justify-content-center align-item-center">    
+                <h1 class="pb-2 text-center position-relative mb-5">Bookmarker</h1>
+        <div class="line"></div>
+        <h3 class="text-center fw-bolder my-5 ">
+            <i class="fa-solid fa-bookmark"></i>
+            Bookmark your favorite sites
+            <i class="fa-solid fa-bookmark"></i>
+        </h3>
+        <div class="form">
+             <div class="mb-3">
+                <label for="sitename" class="form-label">
+                    <i class="fa-solid fa-book-bookmark pe-2"></i>
+                    Site Name
+                </label>
+                <input type="text" class="form-control" id="sitename" placeholder="Bookmark Name">
+            </div>
+            <div class="mb-3">
+                <label for="siteURL" class="form-label">
+                    <i class="fa-solid fa-link pe-2"></i>
+                    SiteURL
+                </label>
+                <input oninput="valdiation(this)" type="text" class="form-control" id="siteURL" placeholder="Website URL">
+            </div>
+            <div class="text-center">
+                <button  id="btnSumbit" type="submit" class="fs-5 px-5 py-1 rounded border-danger text-light btn btn-danger ">submit</button>
+            </div>
+            
+        </div>
+        <div class="line my-3 mb-4"></div>
+
+        <div class="mb-4 w-75 mx-auto">
+            <input oninput="searchBookmarks(event)" type="search" class="form-control" id="searchInput" placeholder="Search for a bookmark...">
+        </div>
+
+        <table class="text-center table">
+            <thead>
+                <th>Index</th>
+                <th>Website Name</th>
+                <th>Visit</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </thead>
+            <tbody id="tablebody">
+               
+               
+            </tbody>
+        </table>
+    </div>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
