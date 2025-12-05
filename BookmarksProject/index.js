@@ -2,11 +2,15 @@ const siteNameInput = document.getElementById('sitename');
 const siteURLInput = document.getElementById('siteURL');
 const submitButton = document.getElementById('btnSumbit');
 let sitesList = [];
-let updateIndex = null; // To keep track of the bookmark being updated
+let updateIndex = null; 
+const errorModal = document.querySelector('.modal-box');
+const closeBtn = document.getElementById('closeBtn');
 
 // Event Listeners
 submitButton.onclick = handleSubmit;
 siteURLInput.addEventListener('input', () => validateURL(siteURLInput));
+closeBtn.onclick = closeModal;
+siteNameInput.addEventListener('input', () => validateSiteName(siteNameInput));
 
 // Load sites from local storage on startup
 if (localStorage.getItem('data') != null) {
@@ -14,10 +18,18 @@ if (localStorage.getItem('data') != null) {
     displaySites();
 }
 
+function closeModal() {
+    errorModal.classList.add('d-none');
+}
+
+function showModal() {
+    errorModal.classList.remove('d-none');
+}
+
 // Handle form submission for both adding and updating
 function handleSubmit() {
-    if (!validateURL(siteURLInput) || siteNameInput.value === '') {
-        window.alert("Please enter a valid Site Name and URL.");
+    if (!validateSiteName(siteNameInput) || !validateURL(siteURLInput)) {
+        showModal();
         return;
     }
 
@@ -106,6 +118,19 @@ function validateURL(element) {
     const regex = /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)$/;
     const urlValue = element.value;
     if (regex.test(urlValue)) {
+        element.classList.add('is-valid');
+        element.classList.remove('is-invalid');
+        return true;
+    } else {
+        element.classList.add('is-invalid');
+        element.classList.remove('is-valid');
+        return false;
+    }
+}
+
+// Validate Site Name
+function validateSiteName(element) {
+    if (element.value.length >= 3) {
         element.classList.add('is-valid');
         element.classList.remove('is-invalid');
         return true;

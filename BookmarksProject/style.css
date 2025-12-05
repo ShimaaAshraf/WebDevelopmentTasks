@@ -103,3 +103,71 @@ i
 {
     color: #097b1f;
 }
+
+/* Error Modal Box */
+.modal-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1060;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content-box {
+    width: 90%;
+    max-width: 500px;
+    background-color: #fff;
+}
+
+.circles span {
+    width: 20px;
+    height: 20px;
+}
+
+.circles span:nth-child(1) { background-color: #f15f5d; }
+.circles span:nth-child(2) { background-color: #fdb441; }
+.circles span:nth-child(3) { background-color: #3ec142; }
+
+.rules i {
+    color: #bb4120;
+}
+.close-icon { color: #343a40; }
+
+/* Error Modal Box */
+.modal-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1060;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content-box {
+    width: 90%;
+    max-width: 500px;
+    background-color: #fff;
+}
+
+.circles span {
+    width: 20px;
+    height: 20px;
+}
+
+.circles span:nth-child(1) { background-color: #f15f5d; }
+.circles span:nth-child(2) { background-color: #fdb441; }
+.circles span:nth-child(3) { background-color: #3ec142; }
+
+.rules i {
+    color: #bb4120;
+}
+.close-icon { color: #343a40; }
